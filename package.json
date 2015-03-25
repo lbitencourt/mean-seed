@@ -1,0 +1,25 @@
+{
+  "name": "mean-seed",
+  "version": "0.0.1",
+  "description": "MEAN SEED - repositório base para os projetos MEAN Stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lbitencourt/mean-seed.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Node",
+    "Angular",
+    "Mongo"
+  ],
+  "author": "Leandro Bitencourt",
+  "license": "GLPV2",
+  "bugs": {
+    "url": "https://github.com/lbitencourt/mean-seed/issues"
+  },
+  "homepage": "https://github.com/lbitencourt/mean-seed"
+}
