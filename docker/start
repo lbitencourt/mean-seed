@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ "$(docker ps -a | grep ' project-mongo ')" = '' ] ; then
+  echo starting mongo...
+  docker run -d -p 27017:27017 --name project-mongo lbitencourt/mongo-base
+else
+  if [ "$(docker ps | grep ' project-mongo ')" = '' ] ; then
+    echo mongo exists but is stopped, starting...
+    docker start project-mongo
+  else
+    echo mongo already running
+  fi
+fi
+if [ "$(docker ps -a | grep ' projectfs ')" = '' ] ; then
+  echo starting fs...
+  docker run --name projectfs -v $HOME/projects/project:/var/project ubuntu:14.04
+else
+  echo fs already running
+fi
+if [ "$(docker ps -a | grep ' projectdev ')" = '' ] ; then
+  echo starting dev...
+  docker run --rm -ti -p 3000:3000 -p 5858:5858 --volumes-from projectfs --name projectdev --link project-mongo:mongo lbitencourt/dev-base
+else
+  if [ "$(docker ps | grep ' projectdev ')" = '' ] ; then
+    echo dev exists but is stopped, starting...
+    docker start -ai projectdev
+  else
+    echo dev already running, attaching...
+    docker attach projectdev
+  fi
+fi

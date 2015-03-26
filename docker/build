@@ -1,0 +1,4 @@
+#!/bin/bash
+docker build -t lbitencourt/node-base ./base/
+docker build -t lbitencourt/mongo-base ./mongo/
+docker build -t lbitencourt/dev-base ./dev/
