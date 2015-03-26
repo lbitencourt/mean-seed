@@ -1,5 +1,5 @@
 FROM lbitencourt/node-base
-MANTAINER Leandro Bitencourt <bitcourt@gmail.com>
+MAINTAINER Leandro Bitencourt <bitcourt@gmail.com>
 
 VOLUME /var/mean-seed
 WORKDIR /var/mean-seed
