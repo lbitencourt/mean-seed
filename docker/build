@@ -1,4 +1,4 @@
 #!/bin/bash
-docker build -t lbitencourt/node-base ./base/
-docker build -t lbitencourt/mongo-base ./mongo/
-docker build -t lbitencourt/dev-base ./dev/
+docker build -t lbitencourt/mean-seed-node ./base/
+docker build -t lbitencourt/mean-seed-mongo ./mongo/
+docker build -t lbitencourt/mean-seed-dev ./dev/

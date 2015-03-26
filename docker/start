@@ -1,31 +1,32 @@
 #!/bin/bash
 
-if [ "$(docker ps -a | grep ' project-mongo ')" = '' ] ; then
+
+if [ "$(docker ps -a | grep ' mean-seed-mongo ')" = '' ] ; then
   echo starting mongo...
-  docker run -d -p 27017:27017 --name project-mongo lbitencourt/mongo-base
+  docker run -d -p 27017:27017 --name mean-seed-mongo lbitencourt/mean-seed-mongo
 else
-  if [ "$(docker ps | grep ' project-mongo ')" = '' ] ; then
+  if [ "$(docker ps | grep ' mean-seed-mongo ')" = '' ] ; then
     echo mongo exists but is stopped, starting...
-    docker start project-mongo
+    docker start mean-seed-mongo
   else
     echo mongo already running
   fi
 fi
-if [ "$(docker ps -a | grep ' projectfs ')" = '' ] ; then
+if [ "$(docker ps -a | grep ' mean-seed-fs ')" = '' ] ; then
   echo starting fs...
-  docker run --name projectfs -v $HOME/projects/project:/var/project ubuntu:14.04
+  docker run --name mean-seed-fs -v $HOME/projects/mean-seed:/var/mean-seed ubuntu:14.04
 else
   echo fs already running
 fi
-if [ "$(docker ps -a | grep ' projectdev ')" = '' ] ; then
+if [ "$(docker ps -a | grep ' mean-seed-dev ')" = '' ] ; then
   echo starting dev...
-  docker run --rm -ti -p 3000:3000 -p 5858:5858 --volumes-from projectfs --name projectdev --link project-mongo:mongo lbitencourt/dev-base
+  docker run --rm -ti -p 3000:3000 -p 5858:5858 --volumes-from mean-seed-fs --name mean-seed-dev --link mean-seed-mongo:mongo lbitencourt/mean-seed-dev
 else
-  if [ "$(docker ps | grep ' projectdev ')" = '' ] ; then
+  if [ "$(docker ps | grep ' mean-seed-dev ')" = '' ] ; then
     echo dev exists but is stopped, starting...
-    docker start -ai projectdev
+    docker start -ai mean-seed-dev
   else
     echo dev already running, attaching...
-    docker attach projectdev
+    docker attach mean-seed-dev
   fi
 fi

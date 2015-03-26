@@ -1,27 +1,28 @@
 #!/bin/bash
-if [ "$(docker ps -a | grep 'project-mongo')" = '' ] ; then
+
+if [ "$(docker ps -a | grep 'mean-seed-mongo')" = '' ] ; then
   echo mongo already stopped
 else
-  if [ ! "$(docker ps | grep 'project-mongo')" = '' ] ; then
+  if [ ! "$(docker ps | grep 'mean-seed-mongo')" = '' ] ; then
     echo mongo is running, stop...
-    docker stop project-mongo
+    docker stop mean-seed-mongo
   fi
   echo removing mongo...
-  docker rm project-mongo
+  docker rm mean-seed-mongo
 fi
-if [ "$(docker ps -a | grep ' prjectfs ')" = '' ] ; then
+if [ "$(docker ps -a | grep ' mean-seed-fs ')" = '' ] ; then
   echo fs already stopped
 else
   echo fs exists, removing...
-  docker rm prjectfs
+  docker rm mean-seed-fs
 fi
-if [ "$(docker ps -a | grep ' prjectdev ')" = '' ] ; then
+if [ "$(docker ps -a | grep ' mean-seed-dev ')" = '' ] ; then
   echo dev already stopped
 else
-  if [ ! "$(docker ps | grep ' prjectdev ')" = '' ] ; then
+  if [ ! "$(docker ps | grep ' mean-seed-dev ')" = '' ] ; then
     echo dev is running, stop...
-    docker stop prjectdev 
+    docker stop mean-seed-dev 
   fi
   echo dev exists, removing...
-  docker rm prjectdev 
+  docker rm mean-seed-dev 
 fi

@@ -1,8 +1,8 @@
 FROM lbitencourt/node-base
 MANTAINER Leandro Bitencourt <bitcourt@gmail.com>
 
-VOLUME /var/project-name
-WORKDIR /var/project-name
+VOLUME /var/mean-seed
+WORKDIR /var/mean-seed
 
 RUN [ "npm", "i", "-g", "gulp", "mocha", "nodemon" ]
 
