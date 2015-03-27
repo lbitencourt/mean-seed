@@ -21,7 +21,10 @@ Com dito antes, estava incomodado. Tudo que eu estava fazendo relativo ao meus e
 
 Chega de blá blá blá  e vamos ao que interessa.
 
-+-- back
++ -- back
++ -- docker
++ -- front
++ -- LICENSE
 
 	
 
