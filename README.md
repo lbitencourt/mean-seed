@@ -22,17 +22,17 @@ Com dito antes, estava incomodado. Tudo que eu estava fazendo relativo ao meus e
 Chega de blá blá blá  e vamos ao que interessa.
 
 ´´´
-+ back
+- back
 	+ bin
 	+ helpers
 	+ modules
 
-+ -- docker
+- docker
 	+ base
 	+ dev
 	+ mongo
-+ -- front
-+ -- LICENSE
+- front
+- LICENSE
 
 ´´´
 	
