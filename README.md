@@ -3,7 +3,7 @@
 **Motivação**
 =============
 
-Últimamente tenho ocupado meu tempo com desenvolvimento em MEAN Stack ([**MongoDB**](https://www.mongodb.org), [**ExpressJS**](http://expressjs.com), [**AngularJS**](https://angularjs.org) e [**NodeJS**](https://nodejs.org/))com ambientes gerenciados pelo [**Docker**](https://www.docker.com). E todas as vezes que inicio um projeto, lá esta eu criando a partir do zero uma nova estrutura.
+Últimamente tenho ocupado meu tempo com desenvolvimento em MEAN Stack ([**MongoDB**](https://www.mongodb.org), [**ExpressJS**](http://expressjs.com), [**AngularJS**](https://angularjs.org) e [**NodeJS**](https://nodejs.org/)) com ambientes gerenciados pelo [**Docker**](https://www.docker.com). E todas as vezes que inicio um projeto, lá esta eu criando a partir do zero uma nova estrutura.
 
 Cansado deste trabalho resolvi criar uma estrutura simples, que conteple o minímo necessário para um projeto. E melhor, porque não subir isso para um repositório em [**GIT**](http://git-scm.com) para facilitar.
 
